@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Login in account</title>
+</head>
+<body>
+<a href="/">
+    <h1>YouWork</h1>
+</a>
+<hr>
+<h4>Авторизация</h4>
+<div th:if="${param.error}">
+    Invalid username and password.
+</div>
+<div th:if="${param.logout}">
+    You have been logged out.
+</div>
+<form th:action="@{/login}" th:method="POST">
+    Эл. почта: <input type="email" name="username"><br><br>
+    Пароль: <input type="password" name="password"><br><br>
+    <input type="submit" value="Вход"/>
+</form>
+<a href="/registration">Зарегистрироваться</a>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${offer.getTitle()}">Title</title>
+</head>
+<body>
+<a href="/">
+    <h1>YouWork</h1>
+</a>
+<hr>
+<p>
+    <b>Покупатель: </b>
+    <b th:text="${offer.getUser()}">User</b>
+
+    <b>Название заказа: </b>
+    <b th:text="${offer.getTitle()} ">Title</b>
+</p>
+<p>
+    <label>Описане заказа: </label>
+    <label th:text="${offer.getDescription()}">Description</label>
+</p>
+<p>
+    <b>Цена: </b>
+    <b th:text="${offer.getPrice()}">Price</b>
+</p>
+<hr>
+<form th:method="delete" th:action="@{/offer/{id}(id=${offer.getId()})}">
+    <input type="submit" value="Удолить заказ">
+</form>
+</body>
+</html>

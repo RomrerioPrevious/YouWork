@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>YOUWORK</title>
+</head>
+<body>
+<div>
+    <a href="/">
+        <h1>YouWork</h1>
+    </a>
+    <a href="/login">Войти</a>
+</div>
+<hr>
+<h4>Найти работу</h4>
+<div th:each="offer : ${offers}">
+    <a th:text="${offer.getTitle()}" th:href="@{/offer/{id}(id=${offer.getId()})}">user</a>
+</div>
+<hr>
+<h3>Создать новый заказ</h3>
+<form th:method="POST" th:action="@{/offer/create}" th:object="${offer}" enctype="multipart/form-data">
+    <p>
+        <label>Назание заказа: </label>
+        <input type="text" name="title">
+    </p>
+    <p>
+        <label>Описание заказа: </label>
+        <input type="text" name="description">
+    </p>
+    <p>
+        <label>Цена заказа: </label>
+        <input type="number" name="price">
+    </p>
+    <p>
+        <input type="submit" value="Добавить заказ">
+    </p>
+</form>
+</body>
+</html>

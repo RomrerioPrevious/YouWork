@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+<a href="/">
+    <h1>YouWork</h1>
+</a>
+<hr>
+<form action="/registration" th:method="POST">
+    Имя пользователя: <input type="text" name="name"><br><br>
+    Эл. почта: <input type="email" name="email"><br><br>
+    Номер телефона: <input type="text" name="phoneNumber"><br><br>
+    Пароль: <input type="password" name="password"><br><br>
+    <input type="submit" value="Вход"/>
+</form>
+</body>
+</html>
